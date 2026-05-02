@@ -36,6 +36,36 @@ Select the angle with the highest combined score (max 15). Break ties with Conve
 
 \---
 
+\#\# Deduplication Protocol
+
+Freshness ceilings prevent the same *angle code* from repeating too soon. This protocol prevents the same *substance* from repeating, even across different angle codes.
+
+**Before finalizing your angle selection, run these checks against the last 5 entries in post-history.md:**
+
+\#\#\# 1. Topic Overlap Check
+Read the Topic Summary and Key Themes columns for the last 5 posts. If your proposed post covers the same core argument, data point, or talking point as any of them — pick a different angle. "Different angle, same point" is still a duplicate.
+
+Known overlap pairs to watch for:
+- A6 ("We tried AI and it didn't work") and A13 ("Most AI projects fail because of bad process") — same argument
+- A1 ("hours wasted on manual tasks") and A14 ("quick win automation") — overlapping territory if the quick win is about time savings
+- A12 ("hire an agency, not a developer") and A15 ("big firms ignore SMBs") — both pitch the agency model
+- A2 ("AI OS vs chatbot") and A5 ("tool comparison") — can overlap if the comparison is about AI systems
+
+If in doubt, ask: "Would a follower who read yesterday's post feel like they're reading the same thing?" If yes, it's a duplicate.
+
+\#\#\# 2. Hook Differentiation
+Read the Hook column for the last 3 posts. Your hook must use a **different formula** (Bold claim, Stat hook, Pattern interrupt, Problem/pain, Question) AND a **different subject**. Two stat hooks in a row is repetitive even if the stats differ. Two myth-busting hooks in a row feels like the same post.
+
+\#\#\# 3. CTA Rotation
+Never use the same CTA type as the previous post. Check the CTA Type column.
+
+\#\#\# 4. Theme Keyword Check
+Read the Key Themes column for the last 5 posts. Your post must not share more than 1 keyword with any post in the last 3 entries. If it shares 2+ keywords with a recent post, the posts are too similar.
+
+**If all top 3 scored angles fail these checks, widen to the top 5. If all 5 fail, pick the angle with the least thematic overlap and deliberately shift the framing** (different industry example, different data point, different audience segment).
+
+\---
+
 \#\# Angle Library
 
 \#\#\# A1 — The 14-Hour Problem  
@@ -364,19 +394,62 @@ Ask yourself before submitting:
 \- Short sentences. No passive voice.  
 \- \*\*Never use:\*\* leverage, synergy, unlock, revolutionize, game-changer, empower, seamless
 
+\#\# Humor Guidelines
+\- Target 2–3 posts per week that include a witty hook, unexpected analogy, or smile-worthy observation. The rest stay straight and direct.
+\- Humor sharpens the point — it never softens it. A clever analogy beats a straight-faced explanation when both land the same message.
+\- Punch up: broken processes, over-hyped tools, industry buzzwords. Never punch down at people, industries, or struggling businesses.
+\- \*\*Allowed:\*\* witty analogies, relatable operational frustrations, gentle absurdity, self-deprecating founder observations, unexpected metaphors
+\- \*\*Banned:\*\* memes, pop culture references that will date badly, sarcasm that could read as mean, puns in hooks (too LinkedIn-bro)
+\- If the joke needs explaining, cut it. If removing the humor weakens the post, the humor is earning its place.
+
 \#\# Research Integration  
 Ground every post in:  
 \- A real stat, trend, or debate from the last 30 days  
 \- Something the audience is already feeling or asking about  
 \- The gap between what they \*think\* is happening and what's \*actually\* happening
 
-## Adding an Image:
+## Visual Style Library
 
-- Once the post is created, create a prompt for nano banana 2 that gives you an image that fits with the post.   
-- Use my kie.api key to use nano banana 2\. 
+Every post gets a unique visual style. Pick one that fits the angle, and never repeat the same style two posts in a row. Check post-history.md for the last style used.
+
+| Style | Name | Best For | Prompt Direction |
+|-------|------|----------|-----------------|
+| V1 | Editorial Illustration | Default, thought leadership (A2, A10) | Flat, bold-color editorial illustration with geometric shapes and clean lines. Think HBR or New Yorker cover art. No text. |
+| V2 | Infographic | Data-heavy posts (A3, A7, A12, A14, A15) | Clean infographic layout with charts, percentages, or comparison graphics. White or dark background, 2–3 accent colors. Can include numbers and short labels. |
+| V3 | Isometric Scene | Process/framework posts (A5, A11) | Isometric 3D-style illustration of a workspace or business process. Soft gradients, modern tech feel without being cold. |
+| V4 | Humorous Metaphor | Myth bust, contrarian, personality (A6, A8, A13) | A slightly absurd visual metaphor that lands the post's point with a smile — e.g., a robot politely holding open a door, a person juggling flaming laptops, an office plant that has taken over the entire desk. Illustrated, not photorealistic. |
+| V5 | Bold Typography | Hook-driven posts, any angle | A graphic built around 1–3 bold words from the post's hook, with expressive typography, color gradients, and minimal illustration. No full sentences. |
+| V6 | Before/After Split | Transformation stories (A1, A4, A6) | Split-screen image: left side chaotic/manual/old, right side clean/automated/modern. Clear visual contrast. |
+| V7 | Photorealistic | Use sparingly (max 1 per 4 posts) | Clean editorial photograph of a professional environment. Only use when the other styles don't fit — this was the old default and should now be rare. |
+| V8 | Cartoon/Sketch | Founder journey, lighter topics (A8, A14) | Loose hand-drawn or whiteboard-sketch style illustration. Good for gentle humor and approachable tone. |
+
+**Style freshness rules:**
+- Never use the same style two posts in a row
+- V7 (Photorealistic) max once every 4 posts
+- When the angle has humor potential (A6, A8, A13, A14), prefer V4 or V8
+
+**Image subject freshness rules:**
+- Check the Image Subject column in post-history.md for the last 3 posts
+- Never repeat the same primary subject (e.g., "robot in office," "person at desk," "tangled wires") within 3 posts
+- Vary the setting: if the last image was an office, use a factory floor, a coffee shop, a workshop, a farm, or an abstract space
+- Vary the protagonist: rotate between robots, business owners, teams, objects, animals-as-metaphor, abstract shapes
+- If two recent images both feature technology/screens, the next image should feature people or physical objects
+
+## Adding an Image
+
+After writing the post, create an image prompt for GPT Image 2 (generated via kie.ai in Make.com):
+1. Pick a visual style from the library above that fits the angle
+2. Check post-history.md Image Style and Image Subject columns — your style AND subject must differ from the last post
+3. Write a detailed prompt (2–3 sentences) describing the image in that style
+4. Include the style name in the Airtable record's image_prompt field so Make.com generates the right look
+5. When the angle supports humor, make the image the punchline — a visual gag that makes the post more memorable
+5. Never describe text overlays or watermarks in the prompt
 
 \#\# Delivery:
 
-- Send the draft via Telegram for approval.   
-- Once approval is obtained, post it to LinkedIn (or use make?)
+\- Write the post and image prompt to the "LinkedIn Drafts" Airtable table. Make.com handles the rest:
+  1. Generates the image via GPT Image 2 (kie.ai)
+  2. Sends the draft + image to Telegram for Lauren's review
+  3. On APPROVE — posts to LinkedIn automatically
+  4. On REJECT — skips and waits for tomorrow's draft
 
