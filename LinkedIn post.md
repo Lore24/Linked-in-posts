@@ -62,6 +62,14 @@ Never use the same CTA type as the previous post. Check the CTA Type column.
 \#\#\# 4. Theme Keyword Check
 Read the Key Themes column for the last 5 posts. Your post must not share more than 1 keyword with any post in the last 3 entries. If it shares 2+ keywords with a recent post, the posts are too similar.
 
+\#\#\# 5. Exact Opening-Line Uniqueness (HARD RULE)
+Read the **Hook (first line)** column for **every entry** in post-history.md — not just the last 5. Your opening line must not:
+- Match any prior hook verbatim
+- Lead with the same statistic, dollar figure, or named claim as any prior hook (e.g., if a prior post led with "$3.70 returned per $1 invested," you cannot lead with that figure again — pick a different stat or rephrase so the lead number is different)
+- Begin with the same first 5 words as any post in the last 10 entries
+
+This rule overrides any temptation to reuse a "best" stat. If the angle's most-quotable stat has already been used as a lead, rotate to a different stat from that angle's list, or reframe the hook to lead with a different element (a question, a problem, a comparison).
+
 **If all top 3 scored angles fail these checks, widen to the top 5. If all 5 fail, pick the angle with the least thematic overlap and deliberately shift the framing** (different industry example, different data point, different audience segment).
 
 \---
@@ -104,6 +112,7 @@ Read the Key Themes column for the last 5 posts. Your post must not share more t
 \- 83% revenue growth for AI-using companies vs. 66% for non-AI  
 \- 96% AI forecasting accuracy vs. 66% human accuracy  
 \- 23.5% reduction in support costs with AI triage  
+\*\*Stat rotation rule (MANDATORY):\*\* Before drafting, scan the **Hook (first line)** column of post-history.md for every prior A3 post. The stat you lead with must be one that has **never** been used as the opening figure before — or, if all five have been used, the one used least recently. Do not default to "$3.70 returned per $1." It has been overused and is now restricted: only re-use it if every other stat in this list has already led an A3 post.  
 \*\*Best CTA type:\*\* Resource offer or soft sell  
 \*\*Freshness ceiling:\*\* Run max once every 6 posts (data-heavy posts perform well but shouldn't dominate the feed)
 
